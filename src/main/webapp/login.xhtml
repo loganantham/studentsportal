@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Login</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</h:head>
+<h:body style="padding: 205px;background-color: blueviolet;">
+	<div class="col-md-4 col-md-offset-4">
+	<h:form>
+		<h1>Students Portal</h1>
+		<div class="form-group">
+	    <label for="exampleFormControlInput1">Register Number</label>
+	    <h:inputText class="form-control" id="username" value="#{login.user}" style="width: 62%;"></h:inputText>
+	  	</div>
+		
+		<div class="form-group">
+	    <label for="exampleFormControlInput1">Password</label>
+	    <h:inputSecret class="form-control" id="password" value="#{login.pwd}" style="width: 62%;"></h:inputSecret>
+	  	</div>
+		
+		<div>
+		<h:outputLabel value="Login Failed! Try Again." style="color: orange;" rendered="#{login.loginFailed}"></h:outputLabel>
+		</div>
+		
+		<h:commandButton action="#{login.validateUsernamePassword}"
+			value="Login"></h:commandButton>
+	</h:form>
+	</div>
+</h:body>
+</html>
